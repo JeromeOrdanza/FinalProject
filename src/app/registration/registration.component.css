@@ -1,0 +1,18 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #4CAF50;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+}
+
+button:hover {
+  background-color: #45a049;
+}

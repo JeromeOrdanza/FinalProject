@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-success text-white">
+      <h5 class="card-title">Consultation</h5>
+    </div>
+    <div class="card-body">
+      <p><strong>Available Consultation Schedule:</strong></p>
+      <ul>
+        <li *ngFor="let schedule of consultationSchedule">
+          {{ schedule.day }}: {{ schedule.time }}
+        </li>
+      </ul>
+      <button (click)="onSetAppointment()" class="btn btn-primary mt-3">Set Appointment</button>
+    </div>
+  </div>
+</div>

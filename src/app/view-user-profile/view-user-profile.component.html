@@ -1,53 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa; /* Light background color */
-            font-family: 'Arial', sans-serif; /* Font style */
-        }
-
-        .card {
-            border: none; /* Remove default border */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .card-title {
-            font-size: 1.5rem; /* Larger font size for the title */
-            font-weight: bold; /* Bold title */
-        }
-
-        .card-text {
-            font-size: 1rem; /* Standard font size for text */
-        }
-
-        .container {
-            margin-top: 50px; /* Space above the container */
-        }
-    </style>
-</head>
-<body>
-
-<div class="container mt-4">
-    <h2 class="text-center">User  Profile</h2>
+<div class="container mt-5">
     <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"> user.name </h5>
-            <p class="card-text"><strong>Email:</strong>  user.email </p>
-            <p class="card-text"><strong>Enrolled Courses:</strong></p>
-            <ul class="list-group">
-                <li *ngFor="let course of user.courses" class="list-group-item"> course  </li>
-            </ul>
+      <div class="card-header bg-primary text-white">
+        <h3 class="card-title">User Profile</h3>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="userName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="userName" [value]="userProfile.name" readonly>
         </div>
+        <div class="mb-3">
+          <label for="userEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="userEmail" [value]="userProfile.email" readonly>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Enrolled Courses</label>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let course of userProfile.enrolledCourses">
+              {{ course }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  </div>
+  

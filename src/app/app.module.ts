@@ -6,15 +6,11 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ViewUserProfileComponent } from './view-user-profile/view-user-profile.component';
 import { ClassRecordComponent } from './class-record/class-record.component';
-import { EditStudentRecordComponent } from './edit-student-record/edit-student-record.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent,
-    ViewUserProfileComponent,
-    ClassRecordComponent,
-    EditStudentRecordComponent
+
   ],
   imports: [
     BrowserModule,
@@ -22,6 +18,6 @@ import { EditStudentRecordComponent } from './edit-student-record/edit-student-r
     AppRoutingModule // Already includes RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

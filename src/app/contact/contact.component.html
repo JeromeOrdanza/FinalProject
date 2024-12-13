@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-info text-white">
+      <h5 class="card-title">Contact Us</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="form-group">
+          <label for="name">Instructor Name</label>
+          <input type="text" id="name" class="form-control" [(ngModel)]="instructorInfo.name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" [(ngModel)]="instructorInfo.email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="school">School</label>
+          <input type="text" id="school" class="form-control" [(ngModel)]="instructorInfo.school" name="school" required />
+        </div>
+        <div class="form-group">
+          <label for="courses">Courses Taught</label>
+          <ul>
+            <li *ngFor="let course of instructorInfo.courses">{{ course }}</li>
+          </ul>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

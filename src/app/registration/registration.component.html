@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-            font-family: 'Arial', sans-serif;
-        }
+<div class="container mt-5">
+  <h2 class="text-center mb-4">User Registration</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        placeholder="Enter your name"
+      />
+      <small class="text-danger" *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+        Name is required.
+      </small>
+    </div>
 
-        .form-container {
-            background: white; /* White background for the form */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 30px; /* Padding around the form */
-            max-width: 400px; /* Max width for the form */
-            margin: 50px auto; /* Center the form */
-        }
+    <div class="form-group mb-3">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <small class="text-danger" *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+        Valid email is required.
+      </small>
+    </div>
 
-        .btn-primary {
-            background-color: #007bff; /* Primary button color */
-            border: none; /* Remove border */
-            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-        }
+    <div class="form-group mb-3">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <small class="text-danger" *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+        Password must be at least 6 characters.
+      </small>
+    </div>
 
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker color on hover */
-            transform: scale(1.05); /* Slightly enlarge on hover */
-        }
-    </style>
-</head>
-<body>
-
-<div class="form-container">
-    <form>
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" required />
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required />
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
+    <button type="submit" class="btn btn-primary w-100" [disabled]="registrationForm.invalid">
+      Register
+    </button>
+  </form>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
