@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff; /* White background for the form */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #343a40; /* Dark color for the heading */
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #343a40; /* Dark color for labels */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Student Record</h2>
+    <form>
+        <div class="mb-3">
+            <label for="id" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="student.id" name="id" disabled />
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="student.name" name="name" />
+        </div>
+        <div class="mb-3">
+            <label for="activity" class="form-label">Activity</label>
+            <input type="text" class="form-control" id="activity" [(ngModel)]="student.activity" name="activity" />
+        </div>
+        <div class="mb-3">
+            <label for="info" class="form-label">Additional Info</label>
+            <textarea class="form-control" id="info" [(ngModel)]="student.info" name="info"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="saveRecord()">Save</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
